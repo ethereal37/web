@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="3.css">
+        <meta charset="utf-8">
+        <title>个人主页</title>
+    </head>
+    <body style="background-color: #f0f0f0; font-family: Arial, sans-serif; text-align: center;">
+        <div class="dvi_logo">
+            <img src="img/author.jpg" class="logo">
+        </div>
+        <h1 class="yinghao1">“</h1>
+        <hr class="top_hr">
+        <h2 class="h2_font1">是来找Ethereal的吗?</h2><h2 class="h2_font2">她好像不在唉?</h2><h2 class="h2_font3">先来这里看看吧!</h2>
+        <hr class="under_hr">
+        <h1 class="yinghao2">”</h1>
+        <div class="dd">
+            <a href="https://github.com/ethereal37" target="_blank" class="a_link">
+                <img src="img/github.png" class="icon" style="margin-right: 20px;" title="去 GitHub上看看吧!">
+            </a>
+            <a href="https://ethereal.ac.cn" target="_blank" class="a_link">
+                <img src="img/blog.png" class="icon" style="margin-right: 20px;" title="去博客上看看吧!">
+            </a>
+            <button class="button_icon" id="darkModeToggle">💡</button>
+        </div>
+        <footer class="fotter">
+            <h5>纯手搓页面 - @2025 by <a href="https://ethereal.ac.cn" title="坐好，发车喽！">Ethereal</a></h5>
+        </footer>
+        <script>
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+            
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                
+                // 保存用户偏好到本地存储
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                    darkModeToggle.textContent = '☀️'; // 切换到太阳图标
+                } else {
+                    localStorage.setItem('darkMode', 'disabled');
+                    darkModeToggle.textContent = '💡'; // 切换回灯泡图标
+                }
+            });
+            
+            // 检查本地存储中的用户偏好
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = '☀️';
+            }
+        </script>
+    </body>
+</html>
